@@ -1,5 +1,8 @@
 # action-setup-baselime
 
+[![Documentation][docs_badge]][docs]
+[![License][license_badge]][license]
+
 # :gear: `action-setup-baselime` ![](https://github.com/Baselime/action-setup-baselime/workflows/Tests/badge.svg)
 > Setup the Baselime CLI in Github actions
 

@@ -1,6 +1,6 @@
 # action-setup-baselime
 
-# :gear: `setup-baselime` ![](https://github.com/Baselime/action-setup-baselime/workflows/Tests/badge.svg)
+# :gear: `action-setup-baselime` ![](https://github.com/Baselime/action-setup-baselime/workflows/Tests/badge.svg)
 > Setup the Baselime CLI in Github actions
 
 ## About
@@ -14,7 +14,7 @@ Setup the `baselime` CLI:
 
 ```yaml
 steps:
-- uses: baselime/setup-baselime@v0.0.1
+- uses: baselime/action-setup-baselime@v0.0.1
   with:
     baselime-api-key: <YOUR_API_KEY> # Can be imported from Github Actions Secrets
 ```
@@ -23,7 +23,7 @@ A specific version of the `baselime` CLI can be installed:
 
 ```yaml
 steps:
-- uses: baselime/setup-baselime@v1
+- uses: baselime/action-setup-baselime@v1
   with:
     baselime-api-key: <YOUR_API_KEY> # Can be imported from Github Actions Secrets
     version:

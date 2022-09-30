@@ -1,0 +1,45 @@
+name: Tests
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+        version: [1.1.0, 1.0.0]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup baselime
+      uses: ./
+      with:
+        version: ${{ matrix.version }}
+
+    - name: Capture baselime version installed
+      run: |
+        export BASELIME_VERSION=$( baselime --version )
+        echo 'BASELIME_VERSION_INSTALLED<<EOF' >> $GITHUB_ENV
+        baselime --version >> $GITHUB_ENV
+        echo 'EOF' >> $GITHUB_ENV
+
+    - name: Verify
+      shell: python
+      env:
+        BASELIME_VERSION_EXPECTED: ${{ matrix.version }}
+      run: |
+        import sys, os
+        sys.exit(
+            int(not os.environ["BASELIME_VERSION_EXPECTED"] in os.environ["BASELIME_VERSION_INSTALLED"])
+        )

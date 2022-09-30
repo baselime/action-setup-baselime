@@ -1,0 +1,12 @@
+name: 'setup-baselime'
+description: 'Install Baselime CLI on Github Actions runners'
+inputs:
+  baselime-api-key:  # id of input
+    description: 'Api Key'
+    required: true
+  version:
+    description: 'Version of the Baselime CLI to install'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

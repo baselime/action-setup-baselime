@@ -7,7 +7,7 @@
 > Setup the Baselime CLI in Github actions
 
 ## About
-This action sets up the [Baselime CLI](https://docs.baselime.io/cli/overview/) in Github Actions.
+This action sets up the [Baselime CLI](https://baselime.io/docs/cli/overview/) in Github Actions.
 
 This action can be run on `ubuntu-latest`, and `macos-latest` GitHub Actions runners, and will install and expose a specified version of the `baselime` CLI on the runner environment.
 
@@ -56,7 +56,7 @@ See [LICENSE](LICENSE) for more information.
 
 <!-- Badges -->
 
-[docs]: https://docs.baselime.io
+[docs]: https://baselime.io/docs/
 [docs_badge]: https://img.shields.io/badge/docs-reference-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
 [license_badge]: https://img.shields.io/github/license/baselime/cli.svg?color=blue&style=flat-square&ghcache=unused

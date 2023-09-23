@@ -13,30 +13,31 @@ This action can be run on `ubuntu-latest`, and `macos-latest` GitHub Actions run
 
 ## Usage
 
-Setup the Baselime CLI:
+Create a marker for every new deployment
 
 ```yaml
 steps:
-- uses: baselime/action-setup-baselime@v0.0.1
-  with:
-    baselime-api-key: <YOUR_API_KEY> # Can be imported from Github Actions Secrets
+  - uses: baselime/action-setup-baselime@v0.0.1
+    with:
+      baselime-api-key: ${{ secrets.BASELIME_API_KEY }} # Can be imported from Github Actions Secrets
+  - name: 📍Create marker
+    run: |
+      baselime mark \
+      --name Deployment \
+      --url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+      --metadata '${{ toJson(github) }}' \
+      --service ${{ github.repository }}
 ```
 
-Install a specific version of the Baselime CLI:
+The marker will be available on the timeline when you query your telemetry daya
 
-```yaml
-steps:
-- uses: baselime/action-setup-baselime@v1
-  with:
-    baselime-api-key: <YOUR_API_KEY> # Can be imported from Github Actions Secrets
-    version:
-      0.0.18
-```
+![](./assets/marker.png)
+
 
 ## Inputs
 The actions supports the following inputs:
 
-- `baselime-api-key`: The API key to use with the Baselime CLI. You can get your API key by running `baselime auth status` in your local terminal or through the Baselime console
+- `baselime-api-key`: The API key to use with the Baselime CLI. You can get your API key  in the [Baselime console](https://console.baselime.io)
 - `version`: The version of `baselime` to install, defaulting to the latest version
 
 ## Contributing

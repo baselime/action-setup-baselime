@@ -29,7 +29,7 @@ steps:
       --service ${{ github.repository }}
 ```
 
-The marker will be available on the timeline when you query your telemetry daya
+The marker will be available on the timeline when you query your telemetry data
 
 ![](./assets/marker.png)
 
@@ -44,7 +44,7 @@ The actions supports the following inputs:
 
 Feel free to submit PRs or to fill issues. Every kind of help is appreciated. 
 
-Kindly check our [Contributing](Contributing.md) guide on how to propose
+Kindly check our [Contributing](CONTRIBUTING.md) guide on how to propose
 bugfixes and improvements, and submitting pull requests to the project.
 
 ## License

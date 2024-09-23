@@ -1,5 +1,6 @@
-# :gear: action-setup-baselime
+# [DEPRECATED] :gear: action-setup-baselime
 
+![No Maintenance Intended](https://img.shields.io/maintenance/no/2024.svg)
 [![Documentation][docs_badge]][docs]
 [![License][license_badge]][license]
 ![](https://github.com/Baselime/action-setup-baselime/workflows/Tests/badge.svg)
